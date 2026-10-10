@@ -1,0 +1,11 @@
+.edit-key
+scripts
+README.md
+node_modules
+.env*
+.ingest-key
+docs
+google-form
+.github
+.env.example
+.gitignore

@@ -1,0 +1,704 @@
+{
+  "meta": {
+    "title": "AI Visibility Audit",
+    "subtitle": "Is our brand in the AI answer? A 21-day manual MVP to test whether B2B marketing leads in Singapore and Southeast Asia (SEA) will trust and pay for a repeatable measure of their brand's presence in AI answers.",
+    "author": "Krishna Nellutla",
+    "start": "2026-10-03",
+    "end": "2026-10-23",
+    "updated": "2026-10-10",
+    "survey_link": "https://docs.google.com/forms/d/e/1FAIpQLSeHynCvC3omxm3OiiNl9XecNaRBJHx8-B_KXQqE-kTPvC02rQ/viewform",
+    "evidence_boundary": "Nothing here is presented as collected evidence unless it says so. Two items are labelled exceptions: the draft composite observation in section 1, and the five synthetic answer-labelling pairs used to test the labeller. Survey responses arrive live from the Google Form and are counted as they come; interviews and audits are counted as they are logged, and zero is shown as zero.",
+    "tracker_url": "https://geo.tinkeryard.dev"
+  },
+  "north_star": "By 2 April 2027, I can take any problem I have observed in a real person from a written spec to a verified, running LLM MVP in under one week, and I can explain every line of it.",
+  "deliverables": [
+    {
+      "name": "Observation",
+      "status": "draft",
+      "note": "Draft composite written from my notes on generative engine optimisation (GEO: making content more likely to be cited in AI answers). Not a real person's account. To be replaced after three conversations."
+    },
+    {
+      "name": "Hypothesis",
+      "status": "done",
+      "note": "Numeric and falsifiable. Pass bar re-dated from 9 Oct to 23 Oct 2026 and scaled to 2 delivered audits plus a go/no-go."
+    },
+    {
+      "name": "Discovery document",
+      "status": "progress",
+      "note": "Problem, subject, market scan, evidence register, business model and three research gaps written. Survey responses and one expert interview are in; interviews with target-segment marketing leads are still to come."
+    },
+    {
+      "name": "MVP plan",
+      "status": "done",
+      "note": "21 days, 3 weeks, 6 gates with arithmetic pass bars."
+    },
+    {
+      "name": "Published tracker link",
+      "status": "done",
+      "note": "Live at https://geo.tinkeryard.dev. It reads one data file, and this PDF is generated from the same file."
+    },
+    {
+      "name": "Validation log",
+      "status": "progress",
+      "note": "10-question survey is live and responses arrive from the Google Form automatically. One interview is logged (an incubator CEO and serial entrepreneur, not a target-segment buyer). No audits yet."
+    },
+    {
+      "name": "Input-Process-Output card",
+      "status": "done",
+      "note": "Manual audit card; software is a labelling aid verified against hand labels."
+    },
+    {
+      "name": "Verdict",
+      "status": "provisional",
+      "note": "Continue validation. Do not build a product yet. Updated on Day 21."
+    }
+  ],
+  "observation": {
+    "status": "Draft composite, not a real person's account. All names, figures and details are illustrative. It will be replaced after three interviews (gate G1).",
+    "text": "Illustrative composite. It is 11:40 PM on a Thursday in Singapore. A Head of Marketing at a 180-person B2B payments company has a leadership review at 9 AM. Organic traffic to product pages is down 27% over two quarters, yet rankings in her SEO tool look flat. Last week the CEO forwarded a prospect's screenshot: asked ChatGPT for the best payment gateway for cross-border marketplaces in Southeast Asia, two competitors were named and her company was not. The CEO's question was one line: \"Why aren't we in this?\" She tests it herself across ChatGPT, Perplexity and Gemini and gets a different answer every time. After 90 minutes she has 14 screenshots, no number and no baseline. Her agency's monthly report covers keywords and backlinks. Her leadership slide says \"AI search impact: under investigation\" for the third month running.",
+    "breaks": "No repeatable measurement, no comparison with competitors, no link from any finding to an action.",
+    "cost": "Assumed 3 to 4 hours a month of manual prompting and screenshots (untested; see the evidence register), plus a leadership question she cannot answer."
+  },
+  "user": {
+    "who": "Head of Marketing, Growth Lead or Marketing Manager who owns organic acquisition at a B2B SaaS or fintech company of 50 to 500 staff in Singapore and SEA.",
+    "context": "Reports monthly to a CEO, already uses an SEO tool and often an agency, has tried typing prompts into ChatGPT by hand, and controls a tool budget of a few hundred Singapore dollars a month without procurement.",
+    "not_user": "Large enterprises with dedicated SEO teams, and agencies. Agencies may be a later channel but are a different buyer."
+  },
+  "hypothesis": {
+    "statement": "B2B SaaS and fintech marketing leads in Singapore and SEA who have seen organic traffic decline cannot report or improve their brand's presence in AI-generated answers, because no trusted, repeatable measurement exists in their workflow. If we deliver a hand-run AI Visibility Audit (30 buyer prompts, 4 AI engines, 3 runs each, Citation Share (the share of AI answers that cite or recommend the brand) against 3 named competitors, 5 prioritised fixes) to real companies by 23 October 2026, then at least 3 of 5 will use it in an internal or leadership report and commit to paying S$300 a month for a recurring re-run.",
+    "pass_bar_original": "3 of 5 by 9 Oct 2026",
+    "pass_bar_current": "2 audits delivered and 3 real conversations by 23 Oct 2026, with a go/no-go on the remaining companies",
+    "falsifiers": [
+      "Fewer than 3 of 5 commit to a paid re-run.",
+      "Most say an existing tool already does this well enough.",
+      "They value it but say their agency should buy it: a different buyer, so discovery restarts.",
+      "The number is unstable: Citation Share moves by more than 15 points across 3 runs in one week with no content changes."
+    ],
+    "pass_bar_log": [
+      "3 Oct 2026: original bar set as 3 of 5 companies by 9 Oct 2026.",
+      "9 Oct 2026: re-dated to 23 Oct 2026. Five hand-run audits is about 1,800 answers (5 x 360) and no company had been confirmed, so the 9 Oct date was not reachable. An interim bar was added: 2 audits delivered and 3 real conversations, with a go or no-go on the rest.",
+      "No result was changed to make the bar pass. The commitment bar of 3 of 5 is unchanged for the full pilot."
+    ],
+    "commitment_definition": "Working definition: a commitment is a written yes (message or email) to pay S$300 a month for the re-run after seeing the audit. A verbal 'sounds good' does not count."
+  },
+  "discovery": {
+    "method": "Look at actual past behaviour, not opinions: what triggered the question, what the person did, how long it took, how they reported it, and what happened next. Two tools: a 10-question screener survey to find the right people, then 20-minute interviews in the Mom Test style (questions about past behaviour, never about the idea) with strong leads.",
+    "market": [
+      {
+        "player": "Profound",
+        "signal": "Reported US$180M Series D at a US$1.8B valuation (Sep 2026; per Dealroom, as cited in the founder's investor deck; not re-checked)",
+        "built_for": "Enterprise, Fortune 500"
+      },
+      {
+        "player": "Peec AI",
+        "signal": "Reported US$29M raised (as cited in the founder's investor deck; not re-checked)",
+        "built_for": "Mid-market brand teams"
+      },
+      {
+        "player": "Semrush, Ahrefs, HubSpot",
+        "signal": "AI-visibility add-ons from roughly US$50 to 199 a month",
+        "built_for": "Existing SEO and CRM users"
+      },
+      {
+        "player": "Otterly, Rankscale",
+        "signal": "Self-serve trackers from roughly US$20 to 29 a month",
+        "built_for": "Solo marketers, agencies"
+      }
+    ],
+    "market_read": "Vendor funding and price lists suggest buyers already pay for AI visibility, and dashboards are abundant. The bet is not another dashboard but a number a mid-market marketing lead in SEA can defend to a CEO, with fixes attached. Falsifier 2 (an existing tool is enough) is therefore the greatest risk.",
+    "research_gaps": [
+      {
+        "gap": "Attribution",
+        "what": "Answers resolved inside the AI interface leave no click for Google Analytics 4 (GA4) to see, so leadership cannot see AI's influence.",
+        "fit": "Partly in scope: a self-reported 'where did you first hear about us' field. GA4 referral setup and econometrics are out."
+      },
+      {
+        "gap": "Third-party sources",
+        "what": "Engines may cite review sites and forums rather than a brand's own pages, so stale outside data shapes what AI says about the brand.",
+        "fit": "In scope and cheap: tally own, competitor and third-party sources per answer. Optional accuracy column (Accurate, Outdated, Wrong) for regulated clients."
+      },
+      {
+        "gap": "Crawl and context",
+        "what": "AI crawlers may skip JavaScript and truncate heavy pages. Literal translation can lose the brand in other languages.",
+        "fit": "Crawler check is in scope (robots.txt, raw-HTML content, llms.txt, JSON-LD). Multilingual is out for v1 and logged as a v2 signal."
+      }
+    ],
+    "caution": "The source for these gaps is a Gemini-written report with unsourced statistics. They are treated as hypotheses, not facts, and are not used in sales copy.",
+    "evidence_register": [
+      {
+        "claim": "Content engineering can lift visibility in generative answers by up to about 40%",
+        "source": "Aggarwal et al., GEO: Generative Engine Optimization, arXiv:2311.09735 (Princeton, Georgia Tech, Allen Institute for AI, IIT Delhi), GEO-bench",
+        "type": "Academic paper and benchmark (arXiv preprint)",
+        "use": "Evidence for the category, not for a client. Never promised in sales copy."
+      },
+      {
+        "claim": "38% fewer organic clicks when a Google AI Overview appears",
+        "source": "Randomised field study, ISB and Carnegie Mellon, Apr 2026 (as cited in the founder's pitch decks)",
+        "type": "Secondary, not re-checked",
+        "use": "Why-now context only."
+      },
+      {
+        "claim": "2.2x clicks per impression when a brand is cited in the AI Overview",
+        "source": "Seer Interactive, 53 brands, Apr 2026 (as cited in the founder's pitch decks)",
+        "type": "Secondary, vendor study",
+        "use": "Why-now context only."
+      },
+      {
+        "claim": "38% of B2B buyers use generative AI to evaluate and shortlist vendors",
+        "source": "Responsive, Inside the Buyer's Mind (as cited in the founder's pitch decks)",
+        "type": "Secondary, vendor survey",
+        "use": "Why-now context only."
+      },
+      {
+        "claim": "900 million people use ChatGPT weekly",
+        "source": "OpenAI, Feb 2026 (as cited in the founder's pitch decks)",
+        "type": "Secondary, company statement",
+        "use": "Scale context only."
+      },
+      {
+        "claim": "Competitor funding and prices (Profound, Peec AI, Semrush and others)",
+        "source": "Dealroom 15 Sep 2026; Surmado tool comparison May 2026 (as cited in the founder's investor deck)",
+        "type": "Secondary",
+        "use": "Tests falsifier 2: is an existing tool enough?"
+      },
+      {
+        "claim": "Manual checking costs 3 to 4 hours a month",
+        "source": "Hypothesis. Tested by survey Q6 and by interviews.",
+        "type": "Unverified assumption",
+        "use": "Replace with interview data."
+      },
+      {
+        "claim": "Organic traffic down 27% over two quarters; CEO forwards a screenshot",
+        "source": "Draft composite observation",
+        "type": "Not real evidence yet",
+        "use": "Replace with a real person's numbers."
+      },
+      {
+        "claim": "Three GEO gaps: attribution, third-party sources, crawl and context",
+        "source": "Gemini-written report with unsourced statistics",
+        "type": "Hypothesis",
+        "use": "Shapes small add-ons only. Not used in sales copy."
+      }
+    ],
+    "business_model": [
+      {
+        "stage": "Now: pilot",
+        "what": "Hand-run audit for one company: one report, one readout call. Proves the value by hand."
+      },
+      {
+        "stage": "Next: under test",
+        "what": "S$300 a month recurring re-run of the same prompt set, so the number becomes a trend."
+      },
+      {
+        "stage": "Later: planned, not validated",
+        "what": "SaaS tiers. Base US$199 to 299 a month (one brand, about 50 prompts). Agency US$1,000 to 2,500+ a month (multi-brand)."
+      }
+    ],
+    "roadmap": [
+      {
+        "phase": "Phase 0 (now)",
+        "what": "Manual audits for 5 companies, spreadsheet, written label rule. Decide go or no-go."
+      },
+      {
+        "phase": "Phase 1",
+        "what": "Rule-based runner: run prompts, log answers, compute Citation Share. Same input, same output."
+      },
+      {
+        "phase": "Phase 2",
+        "what": "AI labeller. Ships only when it matches the golden set at 90% or better. Humans review disputes."
+      },
+      {
+        "phase": "Phase 3",
+        "what": "Recurring tracking for paying clients, then an agency multi-brand view."
+      }
+    ],
+    "pilot_offer": {
+      "you_give": [
+        "Your brand and 3 competitors",
+        "30 minutes with sales to draft prompts",
+        "30 minutes for the readout call"
+      ],
+      "you_get": [
+        "Citation Share against 3 competitors",
+        "5 page-level fixes",
+        "The full answer log",
+        "A stability re-run of 5 prompts (inside the 21 days for the first clients, the following week for later ones)"
+      ]
+    },
+    "wont_claim": [
+      "No guaranteed uplift. We measure and recommend; the engines decide.",
+      "No claim beyond a one-week snapshot. Engines change on their own, so every row is dated.",
+      "Stability is tested: 5 prompts re-run a week later, and a score that moves more than 15 points is reported as unstable.",
+      "A person confirms every label. Software may pre-label.",
+      "Logged-out answers only. Personalised answers can differ.",
+      "We refer the client to an existing tool if it already covers the need."
+    ],
+    "evidence_matrix": [
+      {
+        "source": "Founder's notes and hypothesis draft",
+        "real": "Own reasoning, not evidence",
+        "used": "Starting hypothesis and prompt set design"
+      },
+      {
+        "source": "Composite observation",
+        "real": "Not real",
+        "used": "Placeholder until three interviews replace it"
+      },
+      {
+        "source": "Friends survey (10 questions)",
+        "real": "Real when answered; 0 responses so far",
+        "used": "Find the right people to interview; not proof of willingness to pay"
+      },
+      {
+        "source": "Mom Test interviews",
+        "real": "Real when held; 0 so far",
+        "used": "Observation, trigger event, current process, S$300 question"
+      },
+      {
+        "source": "Golden set (5 labelling pairs, 1 rejected label)",
+        "real": "Synthetic",
+        "used": "Test the answer labeller before real answers exist"
+      },
+      {
+        "source": "Published research and vendor statistics",
+        "real": "Secondary, not re-checked",
+        "used": "Context for why now; never promised to a client"
+      },
+      {
+        "source": "Gemini-written research gaps",
+        "real": "Hypothesis, unsourced",
+        "used": "Small add-ons only"
+      }
+    ]
+  },
+  "validation": {
+    "survey": {
+      "purpose": "Screener to find the right people. It does not validate willingness to pay.",
+      "strong_lead_rule": "Q1 is A or B, Q2 is A, Q4 is A or B, and Q10 is B (approved a S$100 to S$500 a month tool without procurement).",
+      "responses": [],
+      "questions": [
+        {
+          "n": 1,
+          "q": "Which best describes your work?",
+          "options": "A. Marketing, growth or SEO at a company · B. Founder or owner · C. Sales or business development · D. Product or engineering · E. Agency or consultant · F. Something else",
+          "tests": "Is this the subject or a different segment"
+        },
+        {
+          "n": 2,
+          "q": "What kind of organisation do you work in?",
+          "options": "A. B2B software or fintech · B. Another kind of B2B company · C. Consumer brand · D. Agency · E. I don't work at a company",
+          "tests": "Segment fit (B2B SaaS and fintech, 50–500 staff)"
+        },
+        {
+          "n": 3,
+          "q": "In the last 30 days, how often did you use ChatGPT, Perplexity, Gemini or a similar tool to research a product, tool or vendor?",
+          "options": "A. Not at all · B. Once or twice · C. About weekly · D. Several times a week · E. Daily",
+          "tests": "Whether buyers really research this way (past behaviour)"
+        },
+        {
+          "n": 4,
+          "q": "Has anyone from leadership (boss, client, investor, customer) asked whether your Brand/Product shows up in AI answers?",
+          "options": "A. Yes, more than once · B. Yes, once · C. No, but I wondered myself · D. No, never · E. Not applicable to me",
+          "tests": "Is there a real trigger (the CEO-screenshot moment)"
+        },
+        {
+          "n": 5,
+          "q": "What did you do when the search results didn't showed up your brand/product?",
+          "options": "A. Reframed the question into an AI tool myself · B. Asked an agency or a colleague · C. Used a paid tool",
+          "tests": "Current process and bottleneck. Only 3 options: people who did nothing have no matching answer"
+        },
+        {
+          "n": 6,
+          "q": "How often you are searching your brand/product to show up in the AI results?",
+          "options": "A. None · B. Under 1 hour · C. 1 to 3 hours · D. More than 3 hours · E. Once in 24 hrs",
+          "tests": "How often they check by hand (the hypothesis says 3 to 4 hours a month). Options mix frequency and time spent, so read with care"
+        },
+        {
+          "n": 7,
+          "q": "How do you report on AI search to leadership today?",
+          "options": "A. I don't · B. Screenshots or anecdotes · C. A spreadsheet I keep · D. My agency reports it · E. A tool dashboard",
+          "tests": "Falsifiers 2 and 3: tool already exists, or agency is the buyer"
+        },
+        {
+          "n": 8,
+          "q": "If you had a number showing how often AI engines recommend your brand/product against the competitors, what would you most likely do with it?",
+          "options": "A. Put it in a leadership report · B. Decide where to spend content effort · C. Justify or defend budget · D. Probably not use it · E. Not sure",
+          "tests": "Decision the output enables"
+        },
+        {
+          "n": 9,
+          "q": "What would stop you trusting that number?",
+          "options": "A. It changes every time it is run · B. I don't know how it was measured · C. It can't be tied to traffic or revenue · D. I'd want a person to check the labels · E. Nothing, I'd trust it",
+          "tests": "Falsifier 4 (stability) and the labelling rule"
+        },
+        {
+          "n": 10,
+          "q": "Think of the last software tool you started for your team or company. What was its monthly cost, and who had to approve it?",
+          "options": "A. Nothing, it needs approval, Approved myself · B. S$100 to S$500 a month, approved myself · C. S$500 to S$1000 a month, needed review · D. More than S$1000 a month, needed approval",
+          "tests": "Budget authority without procurement, as a signal against the S$300 price"
+        }
+      ],
+      "reading_rule": "Only respondents with Q1 = marketing, growth or SEO (or founder or owner) and Q2 = B2B software or fintech count towards the subject. Everyone else is logged as a segment signal (agency, consumer brand, product or engineering), not toward the 3-of-5 bar. Q10 is a signal, not proof. The form was revised on 10 October 2026, so answers given before that date may use older wording; the tracker records the letter chosen.",
+      "tally_note": "Tally after 10 or more responses: share with Q4 = A or B, share with Q7 = B, share with Q10 = B, subject-fit respondents and strong leads. Strong leads get a 20-minute Mom Test interview.",
+      "known_gaps": [
+        "Q5 offers three options and no 'nothing' answer, so people who did nothing cannot answer it accurately.",
+        "Q6 asks 'how often' but its options mix time spent and frequency (None, Under 1 hour, 1 to 3 hours, More than 3 hours, Once in 24 hrs), so it is read as a rough signal only.",
+        "Q10 option A reads 'Nothing, it needs approval, Approved myself', which contradicts itself.",
+        "Responses are from friends and contacts, not a sample of the subject."
+      ]
+    },
+    "interviews": [],
+    "audits": [],
+    "limitations": [
+      "Survey responses so far come from friends and contacts and are a small sample. They are not a representative or random group.",
+      "One interview is logged, with an incubator CEO and serial entrepreneur. He is an ecosystem expert rather than a marketing lead who would buy the audit, and his view is about other companies, so it supports the problem but does not test price or willingness to pay.",
+      "No audits are logged yet, so the price and willingness to pay are untested.",
+      "Friends and advisors answer politely; a stated opinion is weaker evidence than a signed re-run.",
+      "The survey form was revised during collection (Q4, Q5, Q6, Q8, Q10), so some questions are not comparable across all responses.",
+      "Small sample, no control group, no claim of causality or prevalence."
+    ],
+    "interview_script": [
+      "Walk me through the last time someone asked whether you show up in ChatGPT. What did you do?",
+      "How did you report on this last month?",
+      "Would you approve S$300 a month for a re-run with 5 fixes, without procurement? (Ask for a commitment, not a compliment.)"
+    ]
+  },
+  "ipo": {
+    "input": [
+      "Brand name, domain, aliases and product names",
+      "3 named competitors and their aliases",
+      "30 high-intent buyer prompts in the buyer's own words, with no brand names in them",
+      "Target market and language (for example Singapore, English)",
+      "Client website: robots.txt and key pages"
+    ],
+    "process": [
+      "Run each prompt on ChatGPT, Perplexity, Gemini and Google AI Overviews, logged out, location Singapore, 3 runs each (30 x 4 x 3 = 360 answers). Google AI Overviews has no API, so API runs cover 3 engines (270 answers) and AI Overviews is added by hand or dropped",
+      "Log every answer with date and engine version",
+      "Label each brand per answer: Cited, Recommended, Mentioned or Absent, with a quoted justification",
+      "Compute Citation Share = (Cited or Recommended) / answers returned, per engine and per competitor",
+      "Check the site: crawler access, schema, headings, definition-first pages",
+      "Compare cited competitor pages with the client's pages",
+      "Re-run 5 prompts to test stability (a week later where the calendar allows)"
+    ],
+    "output": [
+      "One-page AI Visibility Report: Citation Share per engine against 3 competitors",
+      "The 5 prompts where competitors win and the client is absent",
+      "5 prioritised fixes, each tied to a specific page",
+      "The raw answer log",
+      "Decision enabled: where to spend next month's content effort, and a defensible answer to 'Are we showing up in AI search?'"
+    ],
+    "note": "The AI labeller is an aid, not the product. It ships only if it matches hand labels on a held-out set at 90% or better, and a human confirms every label."
+  },
+  "gates": [
+    {
+      "id": "G1",
+      "name": "Real user",
+      "bar": "Observation rewritten from 3 real conversations",
+      "current": "1 of 3 conversations logged (an incubator CEO and serial entrepreneur, not a target-segment buyer). Survey responses are not interviews.",
+      "status": "open"
+    },
+    {
+      "id": "G2",
+      "name": "Labeller accuracy",
+      "bar": "90% or better agreement with golden labels on a held-out set of 30 answers, every label quoted",
+      "current": "Dev set: 5 of 6 (83%) with the hosted model. The 5 labelling pairs are synthetic, so this is a prototype check, not evidence of accuracy. Held-out set not built yet.",
+      "status": "open"
+    },
+    {
+      "id": "G3",
+      "name": "Stability",
+      "bar": "Citation Share drifts no more than 15 points across 3 runs in one week",
+      "current": "Not measured yet",
+      "status": "open"
+    },
+    {
+      "id": "G4",
+      "name": "Known-answer test",
+      "bar": "Audit reproduces a known result: a prompt whose answer is already known from the real client's own test (the composite's CEO-screenshot prompt is a placeholder)",
+      "current": "Not run yet",
+      "status": "open"
+    },
+    {
+      "id": "G5",
+      "name": "Shipped",
+      "bar": "App produces the log and one-page report; 2 audits delivered on it",
+      "current": "0 audits delivered. Gradio app not built yet (plan day 15).",
+      "status": "open"
+    },
+    {
+      "id": "G6",
+      "name": "Willingness to pay",
+      "bar": "Companies committing to S$300 a month, reported out of those delivered",
+      "current": "0 of 0",
+      "status": "open"
+    }
+  ],
+  "plan": [
+    {
+      "day": 1,
+      "date": "2026-10-03",
+      "week": 1,
+      "title": "Re-date hypothesis; list 15 reachable marketing leads; send 10 outreach messages",
+      "output": "List of 15 named people, 10 sent",
+      "status": "partial",
+      "evidence": "Survey form built as the outreach vehicle. Outreach count not recorded."
+    },
+    {
+      "day": 2,
+      "date": "2026-10-04",
+      "week": 1,
+      "title": "Pick client #1; collect brand, aliases, 3 competitors, domains",
+      "output": "entities.json for client #1",
+      "status": "todo",
+      "evidence": ""
+    },
+    {
+      "day": 3,
+      "date": "2026-10-05",
+      "week": 1,
+      "title": "Mom Test conversations #1 and #2",
+      "output": "2 interview notes",
+      "status": "todo",
+      "evidence": ""
+    },
+    {
+      "day": 4,
+      "date": "2026-10-06",
+      "week": 1,
+      "title": "Conversation #3; rewrite the observation with a real person",
+      "output": "Observation replaced, no composite",
+      "status": "todo",
+      "evidence": ""
+    },
+    {
+      "day": 5,
+      "date": "2026-10-07",
+      "week": 1,
+      "title": "Draft the 30 buyer prompts in buyer language",
+      "output": "prompts.csv, 30 rows",
+      "status": "todo",
+      "evidence": ""
+    },
+    {
+      "day": 6,
+      "date": "2026-10-08",
+      "week": 1,
+      "title": "Hand-run slice: 10 prompts x 2 engines x 3 runs",
+      "output": "60 raw answers logged",
+      "status": "todo",
+      "evidence": ""
+    },
+    {
+      "day": 7,
+      "date": "2026-10-09",
+      "week": 1,
+      "title": "Label all 60 by hand; list every ruling; send label rule to mentor",
+      "output": "60 labelled rows and rulings list",
+      "status": "todo",
+      "evidence": ""
+    },
+    {
+      "day": 8,
+      "date": "2026-10-10",
+      "week": 2,
+      "title": "Golden set as code and eval.py",
+      "output": "eval.py scores any labeller",
+      "status": "done",
+      "evidence": "Built early: eval.py, golden/labels.jsonl, 9 passing unit tests."
+    },
+    {
+      "day": 9,
+      "date": "2026-10-11",
+      "week": 2,
+      "title": "Runner: call engine APIs, log raw answers with timestamp and model id",
+      "output": "10 prompts x 3 engines logged automatically",
+      "status": "todo",
+      "evidence": ""
+    },
+    {
+      "day": 10,
+      "date": "2026-10-12",
+      "week": 2,
+      "title": "Deterministic labeller: own domain, alias match, empty answers",
+      "output": "Matches hand labels on rule cases",
+      "status": "partial",
+      "evidence": "labellers/rules.py scores 2 of 6 on the golden dev set; Recommended vs Mentioned left to the model."
+    },
+    {
+      "day": 11,
+      "date": "2026-10-13",
+      "week": 2,
+      "title": "LLM labeller for Recommended vs Mentioned with quoted evidence",
+      "output": "First G2 score",
+      "status": "partial",
+      "evidence": "Hosted Hugging Face labeller built. 5 of 6 (83%) on dev set, below the 90% bar."
+    },
+    {
+      "day": 12,
+      "date": "2026-10-14",
+      "week": 2,
+      "title": "Iterate on the dev set only; add disputed labels as golden pairs",
+      "output": "Dev agreement 85% or better",
+      "status": "todo",
+      "evidence": ""
+    },
+    {
+      "day": 13,
+      "date": "2026-10-15",
+      "week": 2,
+      "title": "Citation Share calculator checked against hand numbers",
+      "output": "Code number equals hand number",
+      "status": "todo",
+      "evidence": ""
+    },
+    {
+      "day": 14,
+      "date": "2026-10-16",
+      "week": 2,
+      "title": "G2 test on the held-out 30",
+      "output": "Held-out agreement recorded",
+      "status": "todo",
+      "evidence": ""
+    },
+    {
+      "day": 15,
+      "date": "2026-10-17",
+      "week": 3,
+      "title": "Gradio UI: inputs to labelled table to Citation Share",
+      "output": "App runs end to end on client #1",
+      "status": "todo",
+      "evidence": ""
+    },
+    {
+      "day": 16,
+      "date": "2026-10-18",
+      "week": 3,
+      "title": "One-page report with source tally and footer dates",
+      "output": "Report exports as PDF or HTML",
+      "status": "todo",
+      "evidence": ""
+    },
+    {
+      "day": 17,
+      "date": "2026-10-19",
+      "week": 3,
+      "title": "Crawler check: robots.txt, raw-HTML content, llms.txt, JSON-LD",
+      "output": "Matches a site with a known answer",
+      "status": "todo",
+      "evidence": ""
+    },
+    {
+      "day": 18,
+      "date": "2026-10-20",
+      "week": 3,
+      "title": "Full run on client #1: 30 prompts x 3 engines x 3 runs (270 answers); known-answer test; drift",
+      "output": "G3 and G4 written down",
+      "status": "todo",
+      "evidence": ""
+    },
+    {
+      "day": 19,
+      "date": "2026-10-21",
+      "week": 3,
+      "title": "Write 5 fixes; deliver audit #1 on a call; ask the S$300 question",
+      "output": "Answer recorded verbatim",
+      "status": "todo",
+      "evidence": ""
+    },
+    {
+      "day": 20,
+      "date": "2026-10-22",
+      "week": 3,
+      "title": "Audit #2 on a second company; re-run 5 prompts from audit #1",
+      "output": "2 audits delivered; early stability read (a full one-week re-run falls after Day 21)",
+      "status": "todo",
+      "evidence": ""
+    },
+    {
+      "day": 21,
+      "date": "2026-10-23",
+      "week": 3,
+      "title": "Verdict day: fill the gates, write go/no-go, recall test",
+      "output": "Dated verdict",
+      "status": "todo",
+      "evidence": ""
+    }
+  ],
+  "verdict": {
+    "current": "Continue validation. Do not build a product yet.",
+    "as_of": "2026-10-10",
+    "reason": "The problem is plausible and the hypothesis is testable. Early survey responses and one expert interview support that the problem is real, but the interviewee is not a target-segment buyer, no audits are logged, the observation is still a composite, and nothing yet shows that anyone in the target segment will pay.",
+    "rules": [
+      {
+        "call": "Proceed",
+        "when": "Gates G1 to G5 pass and at least 3 of 5 audited companies commit to the S$300 re-run."
+      },
+      {
+        "call": "Pivot",
+        "when": "The problem is real but the buyer is the agency, or an existing tool is judged good enough, or the number is unstable."
+      },
+      {
+        "call": "Stop",
+        "when": "Fewer than 3 real people can name a time leadership asked them about AI search, or nobody will pay."
+      }
+    ],
+    "dimensions": [
+      {
+        "dimension": "Observation",
+        "verdict": "Starting signal only. Composite, to be replaced."
+      },
+      {
+        "dimension": "Problem",
+        "verdict": "Plausible, not validated."
+      },
+      {
+        "dimension": "Metric (Citation Share)",
+        "verdict": "Defined and testable. Stability unproven."
+      },
+      {
+        "dimension": "Labelling",
+        "verdict": "Prototype scored 5 of 6 on a synthetic dev set. Not trustworthy yet."
+      },
+      {
+        "dimension": "Willingness to pay",
+        "verdict": "Unknown."
+      },
+      {
+        "dimension": "Product",
+        "verdict": "Do not build yet."
+      }
+    ],
+    "next": "Hold two more interviews, at least one with a marketing or growth lead at a B2B software or fintech company, replace the observation, then re-score the gates.",
+    "summary": [
+      "Observation: a draft composite, to be replaced by real interviews (gate G1).",
+      "Discovery: a defined subject, an evidence register that separates real from secondary and synthetic sources, and three small research-gap add-ons.",
+      "MVP: a manual 21-day audit, with software limited to labelling aids that must beat 90% on a held-out set.",
+      "Validation: the 10-question survey is live and collecting responses, and one expert interview is logged. No audits are logged yet.",
+      "Verdict: continue validation. Do not build a product yet."
+    ]
+  },
+  "golden_set": {
+    "summary": "13 golden pairs (hand-written correct answers used to score the labeller) written before any software: 8 audit-scoping pairs (3 clean, 3 failure, 1 v2 segment, 1 no-audit-needed) and 5 answer-labelling pairs, plus 1 rejected label. In code: 5 labelling pairs plus 1 rejected case, scored by eval.py.",
+    "label_rule": [
+      "Cited: the entity's own domain (or a subdomain) is linked as a source.",
+      "Recommended: offered as a suitable answer, by name or alias.",
+      "Mentioned: named without a link and not offered as an option, including negative mentions (flagged separately).",
+      "Absent: none of the above.",
+      "Citation Share = answers where the entity is Cited or Recommended / answers returned. Empty answers are excluded. Every label quotes its evidence."
+    ],
+    "grading_rule": [
+      "Matches the verdict.",
+      "Names the buying questions and ties the prompt set to real prospect language; no prompt contains the brand name.",
+      "Gives a metric with a baseline (or says this audit is the baseline) and includes the stability re-run.",
+      "Tests on at least one prompt where the answer is already known.",
+      "Lists what is out of scope."
+    ],
+    "target": "At least 90% agreement on a random sample of 30 answers, both between two human labellers and between the labeller and the golden labels.",
+    "open_items": [
+      "Disputed labels become new golden pairs.",
+      "Stranger test: give the label rule and unlabelled answers to someone outside marketing; every question they ask is a ruling the rule still needs.",
+      "The 5 labelling pairs in code are synthetic; replace them with real answers as audits run."
+    ]
+  },
+  "manual_note": "The core test is manual: can one person deliver the audit by hand, and will companies commit to paying for it? That needs no software, and the smallest version is a spreadsheet with hand-labelled answers. Days 8 to 18 build labelling aids that make the audit repeatable; they are not required for the core test."
+}

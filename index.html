@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GEO MVP Tracker</title>
+<meta name="description" content="21-day board, evidence and verdict for the AI Visibility Audit manual MVP.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="bar">
+  <div class="bar-in">
+    <div class="brand">
+      <span class="mark" aria-hidden="true"></span>
+      <div><h1>GEO MVP tracker</h1><p id="tagline"></p></div>
+    </div>
+    <div class="bar-right">
+      <span id="saveState" class="save" role="status" aria-live="polite"></span>
+      <button id="lockBtn" class="btn ghost" type="button"></button>
+    </div>
+  </div>
+  <nav class="tabs" role="tablist" aria-label="Sections" id="tabs"></nav>
+</header>
+
+<div id="banner" class="banner" hidden></div>
+<main id="view" tabindex="-1"></main>
+
+<dialog id="drawer" aria-labelledby="dTitle"></dialog>
+<dialog id="unlock" aria-labelledby="uTitle">
+  <form method="dialog" id="unlockForm" class="dlg">
+    <h2 id="uTitle">Unlock editing</h2>
+    <p class="muted">Enter your edit key. Visitors without it can read the board but not change it.</p>
+    <label>Edit key<input id="keyInput" type="password" autocomplete="off" required></label>
+    <p class="err" id="keyErr" hidden></p>
+    <div class="row"><button class="btn ghost" value="cancel" formnovalidate>Cancel</button><button class="btn" id="keyGo" value="ok">Unlock</button></div>
+  </form>
+</dialog>
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+<script src="app.js"></script>
+</body>
+</html>
