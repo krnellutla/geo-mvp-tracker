@@ -139,3 +139,29 @@ function previewLatest() {
   if (!responses.length) return Logger.log('No responses yet.');
   Logger.log(JSON.stringify(payloadFor_(responses[responses.length - 1])));
 }
+
+/**
+ * Run this when answers come through blank. It sends nothing. It lists every item in the form, whether it
+ * counts as a question, and for the latest response shows each answer, the choices, and whether they matched.
+ * Open View > Logs (or Executions) afterwards and read the lines that say NO MATCH.
+ */
+function diagnose() {
+  var MC = FormApp.ItemType.MULTIPLE_CHOICE, LIST = FormApp.ItemType.LIST, CB = FormApp.ItemType.CHECKBOX;
+  var form = getForm_(), q = 0, order = {};
+  Logger.log('Form: ' + form.getTitle() + ' | items: ' + form.getItems().length);
+  form.getItems().forEach(function (item, i) {
+    var t = item.getType(), isQ = (t === MC || t === LIST || t === CB);
+    if (isQ) order[item.getId()] = ++q;
+    Logger.log('item ' + (i + 1) + ' | type ' + t + ' | ' + (isQ ? 'question ' + q : 'not a question') + ' | ' + item.getTitle().slice(0, 70));
+  });
+  var rs = form.getResponses();
+  if (!rs.length) return Logger.log('No responses yet.');
+  var last = rs[rs.length - 1];
+  Logger.log('Latest response ' + last.getId() + ' at ' + last.getTimestamp().toISOString() + ' | answered items: ' + last.getItemResponses().length);
+  last.getItemResponses().forEach(function (ir) {
+    var item = ir.getItem(), choices = choicesOf_(item), ans = Array.isArray(ir.getResponse()) ? ir.getResponse()[0] : ir.getResponse();
+    var idx = choices.indexOf(ans);
+    if (idx < 0) { var w = norm_(ans); for (var k = 0; k < choices.length; k++) if (norm_(choices[k]) === w) { idx = k; break; } }
+    Logger.log('Q' + (order[item.getId()] || '?') + ' | answer: ' + JSON.stringify(ans) + ' | ' + (idx >= 0 ? 'matched letter ' + String.fromCharCode(65 + idx) : 'NO MATCH. Choices are: ' + JSON.stringify(choices)));
+  });
+}
