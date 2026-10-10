@@ -244,7 +244,8 @@ function rEvidence(m, v) {
   const ai = d.adviser_input, inf = d.industry_focus, pp = d.pilot_plan, ue = d.unit_economics;
   m.append(el('h3', {}, 'Advice received and what changed'), el('p', { class: 'muted' }, ai.who + '. ' + ai.date + '. ' + ai.form + '.'), el('p', {}, ai.status),
     table(['Recommendation', 'Decision', 'What changed'], ai.changes.map((x) => [x.rec, pill(x.decision === 'Adopted' ? 'done' : x.decision === 'Not started' || x.decision === 'Noted' ? 'open' : 'doing', x.decision), x.what]), ''),
-    el('p', { class: 'muted' }, d.verification_note));
+    el('p', { class: 'muted' }, d.verification_note),
+    el('h3', {}, 'Deck revisions'), el('p', { class: 'muted' }, d.deck_revisions.date + '. ' + d.deck_revisions.intro), list(d.deck_revisions.changes));
   m.append(el('h3', {}, 'Industry focus'), el('p', {}, inf.starting_customer), table(['Rank', 'Industry and starting segment', 'Assessment'], inf.rows.map((x) => [x.rank, x.industry, x.assessment]), ''), el('p', { class: 'muted' }, inf.note));
   m.append(el('h3', {}, 'Pilot plan'), el('p', { class: 'muted' }, pp.note), table(['When', 'Activity', 'Output'], pp.stages.map((x) => [x.when, x.activity, x.output]), ''));
   m.append(el('h3', {}, 'Measurement rules'), list(d.measurement_rules));

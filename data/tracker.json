@@ -155,8 +155,8 @@
       {
         "claim": "38% of B2B buyers use generative AI to evaluate and shortlist vendors",
         "source": "Responsive, Inside the Buyer's Mind (as cited in the founder's pitch decks)",
-        "type": "Secondary, vendor survey",
-        "use": "Why-now context only."
+        "type": "Second-hand, no longer used",
+        "use": "Replaced in the decks by the checked G2 figure."
       },
       {
         "claim": "900 million people use ChatGPT weekly",
@@ -385,6 +385,11 @@
           "rec": "E-commerce and travel as later markets",
           "decision": "Not started",
           "what": "Recorded with the advisor's expansion conditions. They need product-level data or a hospitality partner, and are outside this MVP."
+        },
+        {
+          "rec": "Keep claims practical in client material (no 'what moves the number', no schema or llms.txt levers, no research percentages as promises)",
+          "decision": "Adopted",
+          "what": "Both decks were revised on 10 Oct 2026. See 'Deck revisions' below."
         }
       ]
     },
@@ -494,7 +499,20 @@
         "why": "Expand with evidence and the right capabilities."
       }
     ],
-    "verification_note": "Sources cited in the advisor's document were checked on 10 October 2026. The G2, Shopify and Google statements match their pages. Adobe's pages could not be opened, so its figures are marked as reported by press coverage. A figure of 42% of consumers using AI assistants for shopping could not be confirmed (independent sources point to a different number) and is not used."
+    "verification_note": "Sources cited in the advisor's document were checked on 10 October 2026. The G2, Shopify and Google statements match their pages. Adobe's pages could not be opened, so its figures are marked as reported by press coverage. A figure of 42% of consumers using AI assistants for shopping could not be confirmed (independent sources point to a different number) and is not used.",
+    "deck_revisions": {
+      "date": "10 October 2026",
+      "intro": "The industry and investor decks were reviewed against the advisor's guidance on practical claims and against Google's published guidance, then revised. The editable sources and regenerated PDFs are in the audit repository.",
+      "changes": [
+        "The slide titled 'What moves the number' is now 'What we check and recommend'. Schema markup, llms.txt and the 'up to 40%' research figure no longer appear on client-facing slides; the research is cited as background only.",
+        "'The blind spot' is now 'What a rank report does not show', and 'What decides the AI answer' is now 'What an AI-answer check adds', so the deck no longer implies that a rank report cannot see the problem.",
+        "Citation Share is no longer the headline. The decks report recommendation rate, citation rate and factual accuracy separately, with cited-or-recommended as a secondary figure.",
+        "The unverified '38% of B2B buyers' statistic was replaced by the checked G2 figure (51% of 1,076 surveyed B2B software buyers). Second-hand statistics are marked 'not re-checked', and the 2.2x click figure is described as an association, not proof of cause.",
+        "Illustrative examples and the composite scenario are labelled as illustrative on the same slide, and funding figures are marked as reported, not re-checked.",
+        "The segment is now B2B payments infrastructure. The investor deck's validation slide shows 0 of 5 audits delivered at 10 October 2026, with the 3-of-5 bar judged at five audits.",
+        "Still to fill in by the founder: contact details, the mentor line and the funding ask. The PPTX files were edited in place and have not been visually checked; the PDFs were."
+      ]
+    }
   },
   "validation": {
     "survey": {
