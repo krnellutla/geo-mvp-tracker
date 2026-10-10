@@ -69,12 +69,11 @@ function matchIndex_(answer, choices) {
 function buildPayload_(formResponseId, submittedAt, itemResponses) {
   var answers = {}, unmatched = [];
   itemResponses.forEach(function (ir) {
-    var n = ir.num;
-    if (!n) {
-      var m = /^\s*(\d+)\.\s/.exec(ir.title || '');
-      n = m ? parseInt(m[1], 10) : 0;
-    }
-    if (n < 1 || n > QUESTIONS) return;
+    // Prefer the number written in the title ("6. ..." or "10.Think ..."), else the question's position in the form.
+    var m = /^\s*(\d+)\s*[.)]/.exec(ir.title || '');
+    var n = m ? parseInt(m[1], 10) : (ir.num || 0);
+    if (m && ir.num && parseInt(m[1], 10) !== ir.num) unmatched.push('Title number ' + m[1] + ' differs from position ' + ir.num + ' for: ' + String(ir.title).slice(0, 40));
+    if (n < 1 || n > QUESTIONS) { unmatched.push('Skipped: "' + String(ir.title).slice(0, 40) + '" is numbered ' + n + ', outside 1 to ' + QUESTIONS); return; }
     var ans = Array.isArray(ir.answer) ? ir.answer[0] : ir.answer;
     ans = (ans === null || ans === undefined) ? '' : String(ans);
     var choices = ir.choices || [];

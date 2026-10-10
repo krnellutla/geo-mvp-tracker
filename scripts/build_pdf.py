@@ -220,7 +220,11 @@ for q in V["survey"]["questions"]:
         if c:
             lines.append(f"{o}: {c}")
     blank = sum(1 for r in _rs if not r.get("q%d" % q["n"]))
-    if _rs and blank:
+    _fs = V["survey"].get("form_summary", {}).get("q%d" % q["n"])
+    if _fs and _rs and blank == len(_rs):
+        lines = [f"{x['option']}: {x['count']}" for x in _fs if x["count"]]
+        lines.append(f"From the form summary chart, {V['survey']['form_summary']['as_of']}. Not matched to individual respondents.")
+    elif _rs and blank:
         lines.append(f"No answer recorded: {blank}")
     dist_rows.append([q["n"], q["q"], "\n".join(lines) if lines else "No responses yet."])
 URL = M.get("tracker_url", "")

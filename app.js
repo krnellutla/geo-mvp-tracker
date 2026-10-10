@@ -281,6 +281,11 @@ function rValidation(m, v) {
     const opts = q.options.split(' · ').map((o) => o.replace(/^[A-F]\.\s*/, '')), key = 'q' + q.n;
     const cells = opts.map((o, k) => [o, rs.filter((r) => r[key] === String.fromCharCode(65 + k)).length]);
     const blank = rs.filter((r) => !r[key]).length;
+    const fs = sv.form_summary && sv.form_summary[key];
+    if (fs && rs.length && blank === rs.length) {
+      return [q.n, q.q, el('div', {}, fs.filter((x) => x.count).map((x) => el('div', {}, x.option + ': ' + x.count)),
+        el('div', { class: 'muted' }, 'From the form summary chart, ' + sv.form_summary.as_of + '. Not matched to individual respondents.'))];
+    }
     return [q.n, q.q, el('div', {}, cells.filter(([, c]) => c).map(([o, c]) => el('div', {}, o + ': ' + c)), blank ? el('div', { class: 'muted' }, 'No answer recorded: ' + blank) : null, !rs.length ? el('span', { class: 'muted' }, 'No responses yet') : null)];
   });
   m.append(el('h3', {}, 'What the responses say so far'), el('p', { class: 'muted' }, 'Counts per answer. This is a small group of friends and contacts, so read it as a screener, not as evidence of demand.'), table(['#', 'Question', 'Answers'], dist, ''));

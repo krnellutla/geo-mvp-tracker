@@ -587,8 +587,37 @@
         "Q5 offers three options and no 'nothing' answer, so people who did nothing cannot answer it accurately.",
         "Q6 asks 'how often' but its options mix time spent and frequency (None, Under 1 hour, 1 to 3 hours, More than 3 hours, Once in 24 hrs), so it is read as a rough signal only.",
         "Q10 option A reads 'Nothing, it needs approval, Approved myself', which contradicts itself.",
-        "Responses are from friends and contacts, not a sample of the subject."
-      ]
+        "Responses are from friends and contacts, not a sample of the subject.",
+        "Q10 answers are not yet matched to individual respondents, so the per-respondent table shows Q10 blank. Its counts come from the form's own summary chart. One respondent chose an option from an earlier version of the question."
+      ],
+      "form_summary": {
+        "as_of": "10 October 2026",
+        "source": "Google Form summary chart (read by the founder from the form's Responses tab)",
+        "responses": 8,
+        "note": "Counts per answer only. They do not say which respondent chose what, so they cannot be used for strong-lead scoring.",
+        "q10": [
+          {
+            "option": "Nothing, it needs approval, Approved myself",
+            "count": 1
+          },
+          {
+            "option": "S$100 to S$500 a month, approved myself",
+            "count": 5
+          },
+          {
+            "option": "S$500 to S$1000 a month, needed review",
+            "count": 1
+          },
+          {
+            "option": "More than S$1000 a month, needed approval",
+            "count": 0
+          },
+          {
+            "option": "S$100 to S$300 a month (wording from an earlier version of this question)",
+            "count": 1
+          }
+        ]
+      }
     },
     "interviews": [],
     "audits": [],
