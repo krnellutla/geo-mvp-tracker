@@ -199,7 +199,7 @@ function rOverview(m, v) {
   const done = v.plan.filter((p) => p.status === 'done').length, doing = v.plan.filter((p) => p.status === 'doing').length;
   const pct = Math.round(((done + doing * 0.5) / 21) * 100), pass = v.gates.filter((g) => g.status === 'pass').length;
   m.append(el('div', { class: 'pane-head' }, el('div', {}, el('p', { class: 'lead' }, 'Where the plan stands today'), el('h2', {}, 'Overview'))));
-  const stats = [[dayNo() + ' / 21', 'Day'], [done, 'Cards done'], [v.plan.filter(isLate).length, 'Days behind'], [v.survey.length, 'Survey responses'], [v.interviews.length + ' / 3', 'Real conversations'], [v.audits.length, 'Audits delivered'], [pass + ' / 6', 'Gates passed']];
+  const stats = [[dayNo() + ' / 21', 'Day'], [done, 'Cards done'], [v.plan.filter(isLate).length, 'Days behind'], [v.survey.length, 'Survey responses'], [v.interviews.length + ' / 3', 'Real conversations'], [v.audits.length, 'Audits delivered'], [pass + ' / ' + v.gates.length, 'Gates passed']];
   m.append(el('div', { class: 'grid g4' }, stats.map(([b, s]) => el('div', { class: 'stat' }, el('b', {}, b), el('span', {}, s)))),
     el('div', { class: 'bar-track', role: 'img', 'aria-label': pct + ' percent' }, el('span', { style: 'width:' + pct + '%' })), el('p', { class: 'muted', style: 'font-size:.82rem' }, pct + '% of the plan, counting Doing cards as half.'));
   m.append(el('h3', {}, 'Deliverables'), el('div', { class: 'grid g3' }, v.deliverables.map((d) => {
@@ -236,11 +236,20 @@ function rEvidence(m, v) {
   m.append(el('h3', {}, 'Subject'), el('div', { class: 'grid g3' }, box('Who', u.who), box('Context', u.context), box('Not the user (yet)', u.not_user)));
   m.append(el('h3', {}, 'Hypothesis'), el('p', {}, h.statement), el('div', { class: 'grid g2' }, box('Original pass bar', h.pass_bar_original), box('Current pass bar', h.pass_bar_current)),
     el('h3', {}, 'What would prove us wrong'), list(h.falsifiers, 'ol'),
-    el('h3', {}, 'Commitment, defined'), el('p', {}, h.commitment_definition), el('h3', {}, 'Pass-bar change log'), list(h.pass_bar_log));
+    el('h3', {}, 'Decision criteria'), list(h.decision_criteria), el('h3', {}, 'Commitment, defined'), el('p', {}, h.commitment_definition), el('h3', {}, 'Pass-bar change log'), list(h.pass_bar_log));
   m.append(el('h3', {}, 'Method'), el('p', {}, d.method));
   m.append(el('h3', {}, 'Evidence base at a glance'), table(['Source', 'Real or not', 'Used for'], d.evidence_matrix.map((x) => [x.source, x.real, x.used])));
   m.append(el('h3', {}, 'Evidence register'), el('p', { class: 'muted' }, 'Every number used, where it came from, and how far to trust it.'), table(['Claim', 'Source', 'Type', 'Use'], d.evidence_register.map((x) => [x.claim, x.source, x.type, x.use])));
   m.append(el('h3', {}, 'Market scan'), table(['Player', 'Signal', 'Built for'], d.market.map((x) => [x.player, x.signal, x.built_for])), el('p', {}, d.market_read));
+  const ai = d.adviser_input, inf = d.industry_focus, pp = d.pilot_plan, ue = d.unit_economics;
+  m.append(el('h3', {}, 'Advice received and what changed'), el('p', { class: 'muted' }, ai.who + '. ' + ai.date + '. ' + ai.form + '.'), el('p', {}, ai.status),
+    table(['Recommendation', 'Decision', 'What changed'], ai.changes.map((x) => [x.rec, pill(x.decision === 'Adopted' ? 'done' : x.decision === 'Not started' || x.decision === 'Noted' ? 'open' : 'doing', x.decision), x.what]), ''),
+    el('p', { class: 'muted' }, d.verification_note));
+  m.append(el('h3', {}, 'Industry focus'), el('p', {}, inf.starting_customer), table(['Rank', 'Industry and starting segment', 'Assessment'], inf.rows.map((x) => [x.rank, x.industry, x.assessment]), ''), el('p', { class: 'muted' }, inf.note));
+  m.append(el('h3', {}, 'Pilot plan'), el('p', { class: 'muted' }, pp.note), table(['When', 'Activity', 'Output'], pp.stages.map((x) => [x.when, x.activity, x.output]), ''));
+  m.append(el('h3', {}, 'Measurement rules'), list(d.measurement_rules));
+  m.append(el('h3', {}, 'Unit economics, calculated'), table(['Calculation', 'Result'], ue.rows, ''), el('p', { class: 'muted' }, ue.note));
+  m.append(el('h3', {}, 'Build order'), table(['When', 'Build or improve', 'Why'], d.build_order.map((x) => [x.when, x.what, x.why]), ''));
   m.append(el('h3', {}, 'Research gaps and where they fit'), table(['Gap', 'What it is', 'Fit with the MVP'], d.research_gaps.map((x) => [x.gap, x.what, x.fit])), el('p', { class: 'muted' }, d.caution));
   m.append(el('div', { class: 'grid g2' }, box('Business model', list(d.business_model.map((x) => x.stage + ': ' + x.what))), box('Roadmap: automate only what is done by hand', list(d.roadmap.map((x) => x.phase + ': ' + x.what)))),
     el('h3', {}, 'Pilot offer'), el('div', { class: 'grid g2' }, box('You give', list(d.pilot_offer.you_give)), box('You get', list(d.pilot_offer.you_get))),

@@ -89,3 +89,11 @@ Pass or fail by Day 21, with arithmetic. This follows your north star: spec firs
 ## What this plan deliberately leaves out
 
 Weekly or daily tracking, a multi-brand view, sentiment scoring, content generation, languages beyond English, and agency buyers (log those as segment signals, not as counts toward the pass bar).
+
+
+## Plan notes, 10 October 2026
+- **Pilot context.** An expert advisor proposed a 6 to 8 week pilot for one payments segment (interviews and five scoped audits, baseline, client implementation, rerun and a request for the next paid cycle). This 21-day plan covers roughly weeks 1 to 3 of that pilot. The rerun and the renewal request fall after 23 October. See `geo-audit/docs/product-direction.md`.
+- **Segment.** The first segment is narrowed to B2B payments infrastructure in Singapore and Southeast Asia.
+- **Gates.** G6 now reads "x of N delivered" and is judged at 3 of 5 only when five companies have been audited. Two gates were added: G7 (implemented changes) and G8 (unit economics).
+- **Build order.** The advisor's order is method and question library first, then collection and logs, then a labelling aid, then recurring monitoring after renewals. Days 8 to 17 below build labelling tools before any audit is delivered. Whether to hold them until the first hand-run audit and the S$300 question is a decision for the founder.
+- **Status.** The Day 5 target of 3 conversations with target-segment leads was not met: one conversation is logged, with an expert who is not a target-segment buyer.

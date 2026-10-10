@@ -20,12 +20,12 @@
     {
       "name": "Hypothesis",
       "status": "done",
-      "note": "Numeric and falsifiable. Pass bar re-dated from 9 Oct to 23 Oct 2026 and scaled to 2 delivered audits plus a go/no-go."
+      "note": "Numeric and falsifiable. First segment narrowed to B2B payments infrastructure on 10 Oct 2026, metric split into three measures, and the pass bar judged only at five audits."
     },
     {
       "name": "Discovery document",
       "status": "progress",
-      "note": "Problem, subject, market scan, evidence register, business model and three research gaps written. Survey responses and one expert interview are in; interviews with target-segment marketing leads are still to come."
+      "note": "Problem, subject, market scan, evidence register, advice received and changes made, pilot plan, business model and research gaps written. Survey responses and one expert interview are in; interviews with target-segment marketing leads are still to come."
     },
     {
       "name": "MVP plan",
@@ -60,26 +60,35 @@
     "cost": "Assumed 3 to 4 hours a month of manual prompting and screenshots (untested; see the evidence register), plus a leadership question she cannot answer."
   },
   "user": {
-    "who": "Head of Marketing, Growth Lead or Marketing Manager who owns organic acquisition at a B2B SaaS or fintech company of 50 to 500 staff in Singapore and SEA.",
+    "who": "Head of Marketing, Growth Lead or Marketing Manager who owns organic acquisition at a B2B payments infrastructure company (payment gateway, subscription billing, payouts or orchestration) of 50 to 500 staff in Singapore or Southeast Asia.",
     "context": "Reports monthly to a CEO, already uses an SEO tool and often an agency, has tried typing prompts into ChatGPT by hand, and controls a tool budget of a few hundred Singapore dollars a month without procurement.",
-    "not_user": "Large enterprises with dedicated SEO teams, and agencies. Agencies may be a later channel but are a different buyer."
+    "not_user": "Large enterprises with dedicated SEO teams, and agencies. Adjacent B2B software and fintech companies come later and are logged as a separate segment. E-commerce and travel are later markets, not started."
   },
   "hypothesis": {
-    "statement": "B2B SaaS and fintech marketing leads in Singapore and SEA who have seen organic traffic decline cannot report or improve their brand's presence in AI-generated answers, because no trusted, repeatable measurement exists in their workflow. If we deliver a hand-run AI Visibility Audit (30 buyer prompts, 4 AI engines, 3 runs each, Citation Share (the share of AI answers that cite or recommend the brand) against 3 named competitors, 5 prioritised fixes) to real companies by 23 October 2026, then at least 3 of 5 will use it in an internal or leadership report and commit to paying S$300 a month for a recurring re-run.",
+    "statement": "Marketing leads at B2B payments infrastructure companies (payment gateways, subscription billing, payouts and orchestration) in Singapore and SEA who have seen organic traffic decline cannot report or improve their brand's presence in AI-generated answers, because no trusted, repeatable measurement exists in their workflow. If we deliver a hand-run AI Visibility Audit (30 buyer prompts, 4 AI engines, 3 runs each, three separate measures against 3 named competitors: recommendation rate (answers that offer the brand as a suitable option), citation rate (answers that link the brand's own domain as a source) and factual accuracy (whether the answers describe the brand correctly). Citation Share, the share of answers that cite or recommend the brand, is kept only as a secondary figure, 5 prioritised fixes) to real companies by 23 October 2026, then at least 3 of 5 will use it in an internal or leadership report and commit to paying S$300 a month for a recurring re-run.",
     "pass_bar_original": "3 of 5 by 9 Oct 2026",
-    "pass_bar_current": "2 audits delivered and 3 real conversations by 23 Oct 2026, with a go/no-go on the remaining companies",
+    "pass_bar_current": "2 audits delivered and 3 real conversations by 23 Oct 2026, with a go/no-go on the remaining companies. The 3-of-5 commitment bar is judged only when five companies have been audited; before that the result is reported as 'x of N asked', with N stated.",
     "falsifiers": [
       "Fewer than 3 of 5 commit to a paid re-run.",
       "Most say an existing tool already does this well enough.",
       "They value it but say their agency should buy it: a different buyer, so discovery restarts.",
+      "Buyers value a one-off audit but do not renew, which would point to a quarterly or implementation service instead.",
       "The number is unstable: Citation Share moves by more than 15 points across 3 runs in one week with no content changes."
     ],
     "pass_bar_log": [
       "3 Oct 2026: original bar set as 3 of 5 companies by 9 Oct 2026.",
       "9 Oct 2026: re-dated to 23 Oct 2026. Five hand-run audits is about 1,800 answers (5 x 360) and no company had been confirmed, so the 9 Oct date was not reachable. An interim bar was added: 2 audits delivered and 3 real conversations, with a go or no-go on the rest.",
-      "No result was changed to make the bar pass. The commitment bar of 3 of 5 is unchanged for the full pilot."
+      "No result was changed to make the bar pass. The commitment bar of 3 of 5 is unchanged for the full pilot.",
+      "10 Oct 2026: after written advice from an expert advisor, the first segment was narrowed to B2B payments infrastructure in Singapore and Southeast Asia, and the metric was split into three separate measures. The 3-of-5 bar is unchanged."
     ],
-    "commitment_definition": "Working definition: a commitment is a written yes (message or email) to pay S$300 a month for the re-run after seeing the audit. A verbal 'sounds good' does not count."
+    "commitment_definition": "Working definition: a commitment is a written yes (message or email) to pay S$300 a month for the re-run after seeing the audit. A verbal 'sounds good' does not count.",
+    "decision_criteria": [
+      "Three paid follow-on commitments out of five is the first go or no-go signal, supported by actual payment where possible. It is judged only when five companies have been audited.",
+      "Clients have implemented useful changes, with the page and date recorded.",
+      "Delivery cost, logged by activity, supports the price.",
+      "If buyers value a one-off audit but do not renew, test a quarterly or implementation service. If agencies hold the budget, test the agency as the buyer. If an existing tool already satisfies the need, revise the offer before building more software.",
+      "This is an early signal, not proof of product-market fit."
+    ]
   },
   "discovery": {
     "method": "Look at actual past behaviour, not opinions: what triggered the question, what the person did, how long it took, how they reported it, and what happened next. Two tools: a 10-question screener survey to find the right people, then 20-minute interviews in the Mom Test style (questions about past behaviour, never about the idea) with strong leads.",
@@ -115,21 +124,21 @@
       {
         "gap": "Third-party sources",
         "what": "Engines may cite review sites and forums rather than a brand's own pages, so stale outside data shapes what AI says about the brand.",
-        "fit": "In scope and cheap: tally own, competitor and third-party sources per answer. Optional accuracy column (Accurate, Outdated, Wrong) for regulated clients."
+        "fit": "In scope and cheap: tally own, competitor and third-party sources per answer. Factual accuracy (Accurate, Outdated, Wrong, checked against the client's own fact sheet) is now one of the three core measures."
       },
       {
         "gap": "Crawl and context",
-        "what": "AI crawlers may skip JavaScript and truncate heavy pages. Literal translation can lose the brand in other languages.",
-        "fit": "Crawler check is in scope (robots.txt, raw-HTML content, llms.txt, JSON-LD). Multilingual is out for v1 and logged as a v2 signal."
+        "what": "AI crawlers may skip JavaScript and truncate heavy pages (unverified; from an unsourced report, to be tested on known sites). Literal translation can lose the brand in other languages.",
+        "fit": "Crawler check is in scope as a diagnostic only (robots.txt, raw-HTML content, JSON-LD and llms.txt present or absent). It reports what is there and does not claim any of it improves AI visibility. Google's guidance says no special AI markup or llms.txt is needed, so neither is recommended as a fix. Multilingual is out for v1."
       }
     ],
     "caution": "The source for these gaps is a Gemini-written report with unsourced statistics. They are treated as hypotheses, not facts, and are not used in sales copy.",
     "evidence_register": [
       {
-        "claim": "Content engineering can lift visibility in generative answers by up to about 40%",
+        "claim": "Content changes raised measured visibility by up to about 40% in a 2023 benchmark",
         "source": "Aggarwal et al., GEO: Generative Engine Optimization, arXiv:2311.09735 (Princeton, Georgia Tech, Allen Institute for AI, IIT Delhi), GEO-bench",
         "type": "Academic paper and benchmark (arXiv preprint)",
-        "use": "Evidence for the category, not for a client. Never promised in sales copy."
+        "use": "Evidence for the category, not for a client, and not tested on current engines. Never quoted in client material."
       },
       {
         "claim": "38% fewer organic clicks when a Google AI Overview appears",
@@ -138,10 +147,10 @@
         "use": "Why-now context only."
       },
       {
-        "claim": "2.2x clicks per impression when a brand is cited in the AI Overview",
+        "claim": "About 2.2x clicks per impression for brands cited in a Google AI Overview, in one 53-brand study",
         "source": "Seer Interactive, 53 brands, Apr 2026 (as cited in the founder's pitch decks)",
         "type": "Secondary, vendor study",
-        "use": "Why-now context only."
+        "use": "Why-now context only. An association, not evidence that being cited causes clicks."
       },
       {
         "claim": "38% of B2B buyers use generative AI to evaluate and shortlist vendors",
@@ -178,6 +187,42 @@
         "source": "Gemini-written report with unsourced statistics",
         "type": "Hypothesis",
         "use": "Shapes small add-ons only. Not used in sales copy."
+      },
+      {
+        "claim": "51% of surveyed B2B software buyers start software research with an AI chatbot more often than Google, and 71% use chatbots somewhere in research (1,076 buyers, March 2026)",
+        "source": "G2, The Answer Economy, April 2026. Checked against G2's page on 10 Oct 2026.",
+        "type": "Secondary vendor survey, checked",
+        "use": "Why-now context. Not specific to SEA payments buyers."
+      },
+      {
+        "claim": "AI-referred retail visits converted at a rate 60% higher than non-AI visits (US retail analytics, July 2026)",
+        "source": "Adobe AI Traffic Trends Report, Aug 2026, as cited by the advisor. Confirmed through press coverage of Adobe; the report itself could not be opened.",
+        "type": "Secondary, observational, not checked at source",
+        "use": "Why-now context. An observed channel comparison, not a forecast for any client."
+      },
+      {
+        "claim": "AI-referred traffic to US travel sites grew 119% year on year in July 2026, and AI-referred conversion was 1% lower than non-AI (47% lower a year earlier)",
+        "source": "Adobe, as cited by the advisor and reported by press coverage; Adobe's page could not be opened.",
+        "type": "Secondary, not checked at source",
+        "use": "Context for the travel market only. US data, not SEA."
+      },
+      {
+        "claim": "Shopify gives merchants access to major AI shopping channels, with native performance tracking and product data recommendations",
+        "source": "Shopify announcement (24 Mar 2026) and changelog (11 May 2026), checked on 10 Oct 2026.",
+        "type": "Vendor documentation, checked",
+        "use": "Competition note for the e-commerce market: native features exist, so a gap must be shown first."
+      },
+      {
+        "claim": "Google says its AI search features rely on foundational SEO and need no special AI markup or AI text files",
+        "source": "Google Search Central, updated July 2026, checked on 10 Oct 2026. Applies to Google Search only.",
+        "type": "Vendor guidance, checked",
+        "use": "Limits what the audit can claim about formatting and llms.txt."
+      },
+      {
+        "claim": "Industry ranking, pilot sequence and adoption assessments",
+        "source": "Written recommendation from an expert advisor, 10 Oct 2026",
+        "type": "Expert opinion, not measured",
+        "use": "Shapes the first segment and the pilot design. Not evidence of demand."
       }
     ],
     "business_model": [
@@ -187,7 +232,7 @@
       },
       {
         "stage": "Next: under test",
-        "what": "S$300 a month recurring re-run of the same prompt set, so the number becomes a trend."
+        "what": "S$300 a month recurring re-run of the same prompt set. The price is a hypothesis: for each audit, minutes by activity and engine cost are logged, and the price stays only if the delivery cost leaves an acceptable margin."
       },
       {
         "stage": "Later: planned, not validated",
@@ -197,19 +242,23 @@
     "roadmap": [
       {
         "phase": "Phase 0 (now)",
-        "what": "Manual audits for 5 companies, spreadsheet, written label rule. Decide go or no-go."
+        "what": "Documented method, payments question library and hand-run audits for up to five companies in one category. Decide go or no-go."
       },
       {
         "phase": "Phase 1",
-        "what": "Rule-based runner: run prompts, log answers, compute Citation Share. Same input, same output."
+        "what": "Answer collection, evidence logs and report automation, for work already done by hand."
       },
       {
         "phase": "Phase 2",
-        "what": "AI labeller. Ships only when it matches the golden set at 90% or better. Humans review disputes."
+        "what": "Reliable labelling with human review of disputed cases. Ships only when it matches the golden set at 90% or better."
       },
       {
-        "phase": "Phase 3",
-        "what": "Recurring tracking for paying clients, then an agency multi-brand view."
+        "phase": "Phase 3 (after renewals)",
+        "what": "Recurring monitoring and a client workflow."
+      },
+      {
+        "phase": "Phase 4 (after segment proof)",
+        "what": "Adjacent software, then selected e-commerce or travel pilots."
       }
     ],
     "pilot_offer": {
@@ -231,7 +280,13 @@
       "Stability is tested: 5 prompts re-run a week later, and a score that moves more than 15 points is reported as unstable.",
       "A person confirms every label. Software may pre-label.",
       "Logged-out answers only. Personalised answers can differ.",
-      "We refer the client to an existing tool if it already covers the need."
+      "We refer the client to an existing tool if it already covers the need.",
+      "No claim that organic traffic is ending, or that existing SEO tools cannot see AI answers. SEO fundamentals still matter, and many SEO suites now add AI-visibility modules.",
+      "No claim that a format, schema markup or an llms.txt file makes an engine recommend a brand. Google's guidance says its AI features rely on standard SEO. The crawler check reports what is present and is a diagnostic, not a remedy.",
+      "No quoting of research gains such as 'up to 40%' in client material. It is a best case from a 2023 benchmark, not a forecast for any client.",
+      "Citation Share is a sampled inclusion rate for a chosen prompt set, engine, date and location. It is not market share or share of voice, and it is shown with its sample size and date.",
+      "Movement after a fix is reported as observed and never attributed in full to the fix, because engines and competitors also change.",
+      "Recommendations rest on what cited competitor pages contain. They are not guaranteed to change what any engine returns."
     ],
     "evidence_matrix": [
       {
@@ -268,8 +323,178 @@
         "source": "Gemini-written research gaps",
         "real": "Hypothesis, unsourced",
         "used": "Small add-ons only"
+      },
+      {
+        "source": "Written advice from an expert advisor",
+        "real": "Real, but opinion",
+        "used": "First segment and pilot design; not evidence of demand"
       }
-    ]
+    ],
+    "adviser_input": {
+      "who": "An expert advisor, a founder and serial entrepreneur in the startup ecosystem (the interviewee logged in the validation log)",
+      "date": "10 October 2026",
+      "form": "Written recommendation sent after the interview",
+      "status": "Expert opinion. The industry ranking, pilot sequence and adoption assessments are recommendations, not measured probabilities, and the document claims no statistical probability of adoption. It does not show that anyone will pay.",
+      "changes": [
+        {
+          "rec": "Start with one industry: B2B payments infrastructure in Singapore and SEA",
+          "decision": "Adopted",
+          "what": "The subject and hypothesis now name B2B payments infrastructure. Adjacent software and fintech come later and are logged separately."
+        },
+        {
+          "rec": "Report recommendation rate, citation rate and factual accuracy separately",
+          "decision": "Adopted",
+          "what": "The input, process and output card, the label rule and the audit toolkit now use three measures. Citation Share stays as a secondary figure."
+        },
+        {
+          "rec": "Keep a fixed core question set, and log prompt, engine, mode, date, geography, method and raw answer",
+          "decision": "Adopted",
+          "what": "Written into the method and into a run-log template in the audit repo. The report must say whether answers came from consumer interfaces or APIs."
+        },
+        {
+          "rec": "Run a 6 to 8 week pilot: interviews, baseline, implementation, rerun",
+          "decision": "Adapted",
+          "what": "The 21-day plan covers roughly weeks 1 to 3 of that pilot. The rerun and the request for a paid renewal fall after 23 October."
+        },
+        {
+          "rec": "Three paid follow-on commitments of five, plus implemented changes and delivery cost",
+          "decision": "Adapted",
+          "what": "The 3-of-5 bar is kept and judged only at five audits. Two gates were added: implemented changes (G7) and unit economics (G8)."
+        },
+        {
+          "rec": "Treat S$300 a month as a hypothesis and log time and cost",
+          "decision": "Adopted",
+          "what": "Gate G8 and the unit-economics table. Figures shown are calculations, not observed costs."
+        },
+        {
+          "rec": "Build in this order: method and question library, collection and logs, labelling with human review, recurring monitoring after renewals",
+          "decision": "Partly adopted",
+          "what": "Recorded as the build order. The day-by-day plan still builds tools from Day 8, before any audit is delivered; whether to hold that back is a decision for the founder."
+        },
+        {
+          "rec": "Keep claims practical: no 'SEO is ending', no 'SEO tools are blind', no formatting or llms.txt guarantees",
+          "decision": "Adopted",
+          "what": "The 'will not claim' list is extended, and the crawler check is described as a diagnostic only."
+        },
+        {
+          "rec": "Interview 8 to 10 marketing leaders and offer five scoped audits",
+          "decision": "Noted",
+          "what": "Kept as the pilot target. Gate G1 stays at three target-segment conversations."
+        },
+        {
+          "rec": "E-commerce and travel as later markets",
+          "decision": "Not started",
+          "what": "Recorded with the advisor's expansion conditions. They need product-level data or a hospitality partner, and are outside this MVP."
+        }
+      ]
+    },
+    "industry_focus": {
+      "starting_customer": "Established payment gateways, subscription billing platforms, payout providers and payment orchestration companies in Singapore and SEA, with customer evidence, a marketing owner, an acquisition budget and the ability to update their website.",
+      "rows": [
+        {
+          "rank": 1,
+          "industry": "B2B software: payments infrastructure in Singapore and SEA",
+          "assessment": "Strongest fit for the current audit and the founder's payments experience. Start here."
+        },
+        {
+          "rank": 2,
+          "industry": "E-commerce: established brands selling products buyers compare",
+          "assessment": "Strong commercial potential, but needs product-level data and catalogue capabilities. Enter once the core audit is validated and customers need product-level diagnosis. Shopify already offers native AI-channel tracking, so a gap must be shown first."
+        },
+        {
+          "rank": 3,
+          "industry": "Travel and hospitality: boutique hotel groups, resorts, specialist operators",
+          "assessment": "Clear discovery use cases, but local demand is untested and results are affected by seasonality and booking platforms. Test after the first software segment, ideally through a hospitality partner."
+        }
+      ],
+      "note": "The ranking and the adoption assessments are the advisor's recommendations, not measured probabilities. Paid demand in India and Southeast Asia still needs validation."
+    },
+    "pilot_plan": {
+      "note": "Advisor-proposed pilot of 6 to 8 weeks for one payments segment. It is a planning window, not a promise of visibility improvement or revenue. Procurement, client implementation and indexing may extend it. The 21-day plan covers roughly the first three weeks.",
+      "stages": [
+        {
+          "when": "Weeks 1 and 2",
+          "activity": "Interview 8 to 10 relevant marketing leaders and offer five scoped audits. Ask what current tools miss.",
+          "output": "Confirm the buyer, urgency, budget and implementation owner."
+        },
+        {
+          "when": "Weeks 2 and 3",
+          "activity": "Run the agreed buyer questions and assess answers, competitors and factual accuracy.",
+          "output": "A documented baseline and five prioritised changes."
+        },
+        {
+          "when": "Weeks 3 to 5",
+          "activity": "Support client implementation and record what changed and when.",
+          "output": "Confirm the recommendations are useful and feasible."
+        },
+        {
+          "when": "Weeks 5 to 8",
+          "activity": "Repeat measurement under the same conditions and request the next paid cycle.",
+          "output": "Assess variation, customer value, delivery cost and renewal."
+        }
+      ]
+    },
+    "measurement_rules": [
+      "Report recommendation rate, citation rate and factual accuracy separately. A combined score can hide whether AI actually recommends the business, so Citation Share (cited or recommended) is kept only as a secondary figure.",
+      "Record for every answer: the prompt, engine, mode (consumer interface or API), date, geography, collection method and the raw answer.",
+      "Keep a fixed core question set. New wording or extra questions are a separate exploratory test and never mix into core figures.",
+      "Use repeated runs and, where practical, a comparison group. Do not attribute all movement to client changes: engines and competitor content also change.",
+      "Keep visibility, referral traffic and commercial outcomes distinct. A sampled inclusion rate is not market share.",
+      "Report variation as a range across runs, with the number of answers behind each figure."
+    ],
+    "unit_economics": {
+      "rows": [
+        [
+          "5 clients at S$300 a month",
+          "S$1,500 a month"
+        ],
+        [
+          "One full cycle per client: 30 prompts x 4 engines x 3 runs",
+          "360 answers (120 per pass)"
+        ],
+        [
+          "Brand assessments per cycle: the client plus 3 competitors",
+          "up to 1,440 (360 x 4)"
+        ],
+        [
+          "Five clients, one full cycle each",
+          "1,800 answers and up to 7,200 brand assessments"
+        ],
+        [
+          "Revenue per answer at S$300 per 360-answer cycle",
+          "about S$0.83, before any labour"
+        ]
+      ],
+      "note": "These are calculations from the proposed workflow, not observed costs. The price stays a hypothesis until paid customers and logged delivery costs validate it: minutes by activity (collection, review, diagnosis, report, call) plus engine and infrastructure cost. Google AI Overviews has no API, so API runs cover three engines (270 answers per cycle)."
+    },
+    "build_order": [
+      {
+        "when": "First",
+        "what": "Documented audit method and a payments question library",
+        "why": "Prove useful diagnosis and repeatable delivery."
+      },
+      {
+        "when": "Next",
+        "what": "Answer collection, evidence logs and report automation",
+        "why": "Reduce work already demonstrated by hand."
+      },
+      {
+        "when": "Then",
+        "what": "Reliable labelling with human review of disputed cases",
+        "why": "Increase capacity while keeping measurement quality."
+      },
+      {
+        "when": "After renewals",
+        "what": "Recurring monitoring and a client workflow",
+        "why": "Build around demonstrated recurring demand."
+      },
+      {
+        "when": "After segment proof",
+        "what": "Adjacent software, then selected commerce or travel pilots",
+        "why": "Expand with evidence and the right capabilities."
+      }
+    ],
+    "verification_note": "Sources cited in the advisor's document were checked on 10 October 2026. The G2, Shopify and Google statements match their pages. Adobe's pages could not be opened, so its figures are marked as reported by press coverage. A figure of 42% of consumers using AI assistants for shopping could not be confirmed (independent sources point to a different number) and is not used."
   },
   "validation": {
     "survey": {
@@ -358,32 +583,35 @@
       "Small sample, no control group, no claim of causality or prevalence."
     ],
     "interview_script": [
-      "Walk me through the last time someone asked whether you show up in ChatGPT. What did you do?",
-      "How did you report on this last month?",
-      "Would you approve S$300 a month for a re-run with 5 fixes, without procurement? (Ask for a commitment, not a compliment.)"
+      "Walk me through the last time someone asked whether you show up in ChatGPT. What did you do, and how long did it take?",
+      "Which questions do your buyers ask when comparing payment providers? Have you tried any in an AI tool?",
+      "What do your current tools or agency miss, and what do you pay today for SEO or monitoring?",
+      "How did you report this last month, and to whom?",
+      "Who would approve S$300 a month, and who would make page changes? (Ask what they pay today before naming the price, and record any price they name in their own words.)",
+      "Would you pay S$300 a month for a re-run with 5 changes? If yes, can you confirm in writing this week?"
     ]
   },
   "ipo": {
     "input": [
       "Brand name, domain, aliases and product names",
       "3 named competitors and their aliases",
-      "30 high-intent buyer prompts in the buyer's own words, with no brand names in them",
+      "30 core buyer prompts in the buyer's own words, with no brand names, taken from real sales or procurement questions in payments. The set is frozen once the first run starts; new wording or extra questions go in a separate exploratory set",
       "Target market and language (for example Singapore, English)",
       "Client website: robots.txt and key pages"
     ],
     "process": [
       "Run each prompt on ChatGPT, Perplexity, Gemini and Google AI Overviews, logged out, location Singapore, 3 runs each (30 x 4 x 3 = 360 answers). Google AI Overviews has no API, so API runs cover 3 engines (270 answers) and AI Overviews is added by hand or dropped",
-      "Log every answer with date and engine version",
+      "Log each answer with: prompt, question-set version, engine and version, mode (consumer interface or API), logged out or in, geography, collection method, run number, date, raw answer, listed sources and who labelled it",
       "Label each brand per answer: Cited, Recommended, Mentioned or Absent, with a quoted justification",
-      "Compute Citation Share = (Cited or Recommended) / answers returned, per engine and per competitor",
+      "Compute three separate measures per engine and per brand: recommendation rate, citation rate and factual accuracy. Cited-or-recommended (Citation Share) is kept as a secondary figure with its four-way split, and every figure shows how many answers sit behind it",
       "Check the site: crawler access, schema, headings, definition-first pages",
       "Compare cited competitor pages with the client's pages",
       "Re-run 5 prompts to test stability (a week later where the calendar allows)"
     ],
     "output": [
-      "One-page AI Visibility Report: Citation Share per engine against 3 competitors",
+      "One-page AI Visibility Report: recommendation rate, citation rate and factual accuracy per engine against 3 competitors, with the number of answers and the variation across runs",
       "The 5 prompts where competitors win and the client is absent",
-      "5 prioritised fixes, each tied to a specific page",
+      "5 prioritised changes, each with a page or external source, an owner and the evidence behind it",
       "The raw answer log",
       "Decision enabled: where to spend next month's content effort, and a defensible answer to 'Are we showing up in AI search?'"
     ],
@@ -394,7 +622,7 @@
       "id": "G1",
       "name": "Real user",
       "bar": "Observation rewritten from 3 real conversations",
-      "current": "1 of 3 conversations logged (an incubator CEO and serial entrepreneur, not a target-segment buyer). Survey responses are not interviews.",
+      "current": "1 of 3 conversations logged, with an incubator CEO who is not a target-segment buyer. The plan's Day 5 target of 3 conversations was missed. Survey responses are not interviews.",
       "status": "open"
     },
     {
@@ -428,8 +656,22 @@
     {
       "id": "G6",
       "name": "Willingness to pay",
-      "bar": "Companies committing to S$300 a month, reported out of those delivered",
+      "bar": "A written yes to S$300 a month from companies that received an audit, reported as x of N delivered, with first actual payments reported separately as the stronger signal. 3 of 5 is judged only when five companies have been audited.",
       "current": "0 of 0",
+      "status": "open"
+    },
+    {
+      "id": "G7",
+      "name": "Implemented changes",
+      "bar": "At least 2 audited companies implement at least 1 of the 5 changes, with the page and date recorded",
+      "current": "Not started",
+      "status": "open"
+    },
+    {
+      "id": "G8",
+      "name": "Unit economics",
+      "bar": "Minutes per audit logged by activity, plus engine cost. A minimum acceptable margin is stated before the first audit, and S$300 is kept only if the logged cost leaves that margin",
+      "current": "Not started",
       "status": "open"
     }
   ],
@@ -627,15 +869,15 @@
   "verdict": {
     "current": "Continue validation. Do not build a product yet.",
     "as_of": "2026-10-10",
-    "reason": "The problem is plausible and the hypothesis is testable. Early survey responses and one expert interview support that the problem is real, but the interviewee is not a target-segment buyer, no audits are logged, the observation is still a composite, and nothing yet shows that anyone in the target segment will pay.",
+    "reason": "The problem is plausible and the hypothesis is testable. Early survey responses and one expert interview support that the problem is real, and the expert's written advice sharpened the first segment and the pilot. But the interviewee is not a target-segment buyer, no audits are logged, the observation is still a composite, and nothing yet shows that anyone in the target segment will pay.",
     "rules": [
       {
         "call": "Proceed",
-        "when": "Gates G1 to G5 pass and at least 3 of 5 audited companies commit to the S$300 re-run."
+        "when": "Gates G1 to G5 pass, at least 3 of 5 audited companies give a written S$300 re-run commitment (actual payment where possible), clients implemented useful changes, and delivery cost supports the price. Judged only when five companies have been audited. An early signal, not proof of product-market fit."
       },
       {
         "call": "Pivot",
-        "when": "The problem is real but the buyer is the agency, or an existing tool is judged good enough, or the number is unstable."
+        "when": "The problem is real but the budget sits with an agency (test the agency as the buyer), or buyers value a one-off audit but do not renew (test a quarterly or implementation service), or an existing tool is judged good enough (revise the offer), or the number is unstable."
       },
       {
         "call": "Stop",
@@ -646,6 +888,10 @@
       {
         "dimension": "Observation",
         "verdict": "Starting signal only. Composite, to be replaced."
+      },
+      {
+        "dimension": "Segment focus",
+        "verdict": "Narrowed to B2B payments infrastructure in SG and SEA on expert advice. The advice is opinion and the segment is untested."
       },
       {
         "dimension": "Problem",
@@ -668,10 +914,10 @@
         "verdict": "Do not build yet."
       }
     ],
-    "next": "Hold two more interviews, at least one with a marketing or growth lead at a B2B software or fintech company, replace the observation, then re-score the gates.",
+    "next": "Hold interviews with marketing leads at B2B payments companies (the advisor suggests 8 to 10 for the pilot; gate G1 needs 3), replace the observation, and define the baseline report. Build the wider platform only after audits prove useful, customers pay again and the unit economics support it.",
     "summary": [
       "Observation: a draft composite, to be replaced by real interviews (gate G1).",
-      "Discovery: a defined subject, an evidence register that separates real from secondary and synthetic sources, and three small research-gap add-ons.",
+      "Discovery: a defined subject, narrowed to B2B payments infrastructure on expert advice, an evidence register that separates real from secondary and synthetic sources, and three small research-gap add-ons.",
       "MVP: a manual 21-day audit, with software limited to labelling aids that must beat 90% on a held-out set.",
       "Validation: the 10-question survey is live and collecting responses, and one expert interview is logged. No audits are logged yet.",
       "Verdict: continue validation. Do not build a product yet."
@@ -684,7 +930,7 @@
       "Recommended: offered as a suitable answer, by name or alias.",
       "Mentioned: named without a link and not offered as an option, including negative mentions (flagged separately).",
       "Absent: none of the above.",
-      "Citation Share = answers where the entity is Cited or Recommended / answers returned. Empty answers are excluded. Every label quotes its evidence."
+      "Recommendation rate = answers where the entity is Recommended / answers returned. Citation rate = answers where it is Cited / answers returned. Citation Share (cited or recommended) is a secondary figure. Empty answers are excluded. Every label quotes its evidence."
     ],
     "grading_rule": [
       "Matches the verdict.",
@@ -697,8 +943,9 @@
     "open_items": [
       "Disputed labels become new golden pairs.",
       "Stranger test: give the label rule and unlabelled answers to someone outside marketing; every question they ask is a ruling the rule still needs.",
-      "The 5 labelling pairs in code are synthetic; replace them with real answers as audits run."
+      "The 5 labelling pairs in code are synthetic; replace them with real answers as audits run.",
+      "Add an accuracy label (Accurate, Outdated, Wrong, Not checkable) checked against the client's own fact sheet, with golden examples built from real answers."
     ]
   },
-  "manual_note": "The core test is manual: can one person deliver the audit by hand, and will companies commit to paying for it? That needs no software, and the smallest version is a spreadsheet with hand-labelled answers. Days 8 to 18 build labelling aids that make the audit repeatable; they are not required for the core test."
+  "manual_note": "The core test is manual: can one person deliver the audit by hand, and will companies commit to paying for it? That needs no software, and the smallest version is a spreadsheet with hand-labelled answers. The advisor's build order is the method and a payments question library first, then collection and logs, then a labelling aid with human review, then recurring monitoring only after renewals. The day-by-day plan below builds labelling tools from Day 8, before any audit is delivered; whether to hold that back until the first hand-run audit and the S$300 question is the founder's decision."
 }

@@ -29,7 +29,7 @@
 
 | Date | Person (role, company type) | Triggering event in their words | What they did | Reported how | S$300 re-run? | Notes |
 |---|---|---|---|---|---|---|
-| Logged 10 Oct 2026 (interview date not recorded) | CEO of Incubz and serial entrepreneur (incubator and startup ecosystem; not a target-segment marketing lead) | Not recorded verbatim. Founder's notes: he said this is a current problem for every other company. | Not recorded | Not recorded | Not asked | He expects the engine to give recommendations after thorough research, which matches the 5 prioritised fixes in the report. This is his view of other companies, not his own past behaviour. Price, who would pay and how he reports are untested. Counts as conversation 1 of 3, with the segment caveat. |
+| Logged 10 Oct 2026 (interview date not recorded) | CEO of Incubz and serial entrepreneur (incubator and startup ecosystem; not a target-segment marketing lead) | Not recorded verbatim. Founder's notes: he said this is a current problem for every other company. | Not recorded | Not recorded | Not asked | He expects the engine to give recommendations after thorough research, which matches the 5 prioritised fixes in the report. This is his view of other companies, not his own past behaviour. Price, who would pay and how he reports are untested. Counts as conversation 1 of 3, with the segment caveat. He later sent a written recommendation (10 Oct 2026) on industry focus and a 6 to 8 week pilot; see the Discovery section of the submission. |
 
 Ask: "Walk me through the last time someone asked whether you show up in ChatGPT. What did you do?" Then: "How did you report on this last month?"
 
