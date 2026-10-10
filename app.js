@@ -281,12 +281,8 @@ function rValidation(m, v) {
     const opts = q.options.split(' · ').map((o) => o.replace(/^[A-F]\.\s*/, '')), key = 'q' + q.n;
     const cells = opts.map((o, k) => [o, rs.filter((r) => r[key] === String.fromCharCode(65 + k)).length]);
     const blank = rs.filter((r) => !r[key]).length;
-    const fs = sv.form_summary && sv.form_summary[key];
-    if (fs && rs.length && blank === rs.length) {
-      return [q.n, q.q, el('div', {}, fs.filter((x) => x.count).map((x) => el('div', {}, x.option + ': ' + x.count)),
-        el('div', { class: 'muted' }, 'From the form summary chart, ' + sv.form_summary.as_of + '. Not matched to individual respondents.'))];
-    }
-    return [q.n, q.q, el('div', {}, cells.filter(([, c]) => c).map(([o, c]) => el('div', {}, o + ': ' + c)), blank ? el('div', { class: 'muted' }, 'No answer recorded: ' + blank) : null, !rs.length ? el('span', { class: 'muted' }, 'No responses yet') : null)];
+    const old = rs.filter((r) => !r[key] && r.raw && r.raw[key]);
+    return [q.n, q.q, el('div', {}, cells.filter(([, c]) => c).map(([o, c]) => el('div', {}, o + ': ' + c)), old.map((r) => el('div', { class: 'muted' }, 'Earlier wording, not comparable: ' + r.raw[key])), (blank - old.length) > 0 ? el('div', { class: 'muted' }, 'No answer recorded: ' + (blank - old.length)) : null, !rs.length ? el('span', { class: 'muted' }, 'No responses yet') : null)];
   });
   m.append(el('h3', {}, 'What the responses say so far'), el('p', { class: 'muted' }, 'Counts per answer. This is a small group of friends and contacts, so read it as a screener, not as evidence of demand.'), table(['#', 'Question', 'Answers'], dist, ''));
   m.append(el('h3', {}, 'Survey questions'), table(['#', 'Question', 'Options', 'What it tests'], sv.questions.map((q) => [q.n, q.q, el('div', {}, q.options.split(' · ').map((x) => el('div', {}, x))), q.tests])), el('p', { class: 'muted', style: 'font-size:.84rem' }, sv.reading_rule + ' ' + sv.tally_note), el('h3', {}, 'Known gaps in the survey'), list(sv.known_gaps));
