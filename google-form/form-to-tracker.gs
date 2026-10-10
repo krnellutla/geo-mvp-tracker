@@ -67,7 +67,7 @@ function matchIndex_(answer, choices) {
  *   choices = the question's option texts, in order.
  */
 function buildPayload_(formResponseId, submittedAt, itemResponses) {
-  var answers = {}, unmatched = [];
+  var answers = {}, raw = {}, unmatched = [];
   itemResponses.forEach(function (ir) {
     // Prefer the number written in the title ("6. ..." or "10.Think ..."), else the question's position in the form.
     var m = /^\s*(\d+)\s*[.)]/.exec(ir.title || '');
@@ -76,12 +76,13 @@ function buildPayload_(formResponseId, submittedAt, itemResponses) {
     if (n < 1 || n > QUESTIONS) { unmatched.push('Skipped: "' + String(ir.title).slice(0, 40) + '" is numbered ' + n + ', outside 1 to ' + QUESTIONS); return; }
     var ans = Array.isArray(ir.answer) ? ir.answer[0] : ir.answer;
     ans = (ans === null || ans === undefined) ? '' : String(ans);
+    raw['q' + n] = ans.slice(0, 200);   // kept so a mismatch can be diagnosed and repaired without asking the respondent again
     var choices = ir.choices || [];
     var idx = matchIndex_(ans, choices);
     if (idx >= 0 && idx < 26) answers['q' + n] = String.fromCharCode(65 + idx);
     else unmatched.push('Q' + n + ': ' + ans);
   });
-  return { formResponseId: formResponseId, submittedAt: submittedAt, answers: answers, unmatched: unmatched };
+  return { formResponseId: formResponseId, submittedAt: submittedAt, answers: answers, raw: raw, unmatched: unmatched };
 }
 
 function choicesOf_(item) {

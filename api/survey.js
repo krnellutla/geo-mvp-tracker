@@ -22,6 +22,8 @@ export default async function handler(req, res) {
         if (a && !/^[A-F]$/.test(a)) return res.status(400).json({ error: `Answer for ${q} must be a single letter A to F` });
         row[q] = a;
       }
+      const raw = {};
+      if (b.raw && typeof b.raw === 'object') for (const q of QS) if (typeof b.raw[q] === 'string') raw[q] = b.raw[q].slice(0, 200);
       const state = (await readState()) || {};
       const list = Array.isArray(state.formResponses) ? state.formResponses : [];
       const at = list.findIndex((r) => r.formResponseId === fid);
@@ -30,6 +32,7 @@ export default async function handler(req, res) {
         let changed = false;
         const merged = { ...list[at] };
         for (const q of QS) if (row[q] && row[q] !== merged[q]) { merged[q] = row[q]; changed = true; }
+        if (Object.keys(raw).length && JSON.stringify(raw) !== JSON.stringify(merged.raw || {})) { merged.raw = { ...(merged.raw || {}), ...raw }; changed = true; }
         if (changed) {
           state.formResponses = list.map((r, i) => (i === at ? merged : r));
           state.updatedAt = new Date().toISOString();
@@ -38,6 +41,7 @@ export default async function handler(req, res) {
         return res.status(200).json({ ok: true, duplicate: true, updated: changed, count: list.length });
       }
       if (list.length >= MAX_RESPONSES) return res.status(413).json({ error: 'Response limit reached' });
+      if (Object.keys(raw).length) row.raw = raw;
       row.id = 'F' + (list.length + 1);
       state.formResponses = [...list, row];
       state.updatedAt = new Date().toISOString();
