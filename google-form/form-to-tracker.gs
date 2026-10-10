@@ -34,6 +34,30 @@ function norm_(t) {
     .replace(/\s+/g, ' ').trim();
 }
 
+/** Looser form: letters and digits only, so punctuation, commas, case and spacing never decide a match. */
+function loose_(t) {
+  return norm_(t).replace(/[^a-z0-9$%+]+/g, ' ').trim();
+}
+
+/**
+ * Index of the choice that an answer refers to, or -1.
+ * Tries, in order: the exact text, normalised text, loose text, then a prefix match
+ * that is accepted only when exactly one choice fits (so an ambiguous answer stays blank).
+ */
+function matchIndex_(answer, choices) {
+  var i = choices.indexOf(answer);
+  if (i >= 0) return i;
+  var n = norm_(answer), l = loose_(answer), k;
+  for (k = 0; k < choices.length; k++) if (norm_(choices[k]) === n) return k;
+  for (k = 0; k < choices.length; k++) if (loose_(choices[k]) === l) return k;
+  var hits = [];
+  for (k = 0; k < choices.length; k++) {
+    var c = loose_(choices[k]);
+    if (c && l && (c.indexOf(l) === 0 || l.indexOf(c) === 0)) hits.push(k);
+  }
+  return hits.length === 1 ? hits[0] : -1;
+}
+
 /**
  * Pure function: turns one form response into the payload the tracker expects.
  * Each answer's letter is its position in the question's choice list (A = first choice).
@@ -52,12 +76,9 @@ function buildPayload_(formResponseId, submittedAt, itemResponses) {
     }
     if (n < 1 || n > QUESTIONS) return;
     var ans = Array.isArray(ir.answer) ? ir.answer[0] : ir.answer;
+    ans = (ans === null || ans === undefined) ? '' : String(ans);
     var choices = ir.choices || [];
-    var idx = choices.indexOf(ans);
-    if (idx < 0) {
-      var want = norm_(ans);
-      for (var i = 0; i < choices.length; i++) if (norm_(choices[i]) === want) { idx = i; break; }
-    }
+    var idx = matchIndex_(ans, choices);
     if (idx >= 0 && idx < 26) answers['q' + n] = String.fromCharCode(65 + idx);
     else unmatched.push('Q' + n + ': ' + ans);
   });
@@ -160,8 +181,7 @@ function diagnose() {
   Logger.log('Latest response ' + last.getId() + ' at ' + last.getTimestamp().toISOString() + ' | answered items: ' + last.getItemResponses().length);
   last.getItemResponses().forEach(function (ir) {
     var item = ir.getItem(), choices = choicesOf_(item), ans = Array.isArray(ir.getResponse()) ? ir.getResponse()[0] : ir.getResponse();
-    var idx = choices.indexOf(ans);
-    if (idx < 0) { var w = norm_(ans); for (var k = 0; k < choices.length; k++) if (norm_(choices[k]) === w) { idx = k; break; } }
+    var idx = matchIndex_(String(ans), choices);
     Logger.log('Q' + (order[item.getId()] || '?') + ' | answer: ' + JSON.stringify(ans) + ' | ' + (idx >= 0 ? 'matched letter ' + String.fromCharCode(65 + idx) : 'NO MATCH. Choices are: ' + JSON.stringify(choices)));
   });
 }
