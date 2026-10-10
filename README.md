@@ -61,3 +61,6 @@ npx vercel --prod --yes                   # redeploy so the download link serves
 
 ## Privacy
 The site is public. Log interviewees by role and company type, not by name. Form responses carry only answer letters, with no names or emails.
+
+## License
+MIT. See [LICENSE](LICENSE). The research paper, third-party decks and any client data are not covered by this license.
